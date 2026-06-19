@@ -8,6 +8,7 @@ export const ImageNode = ({ id, data, selected }) => {
 
   return (
     <BaseNode
+      id={id}
       title="Image"
       headerColor="#ec4899"
       inputs={[]}

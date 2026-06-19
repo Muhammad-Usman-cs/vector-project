@@ -9,6 +9,7 @@ export const ApiNode = ({ id, data, selected }) => {
 
   return (
     <BaseNode
+      id={id}
       title="API Call"
       headerColor="#f59e0b"
       inputs={[{ id: `${id}-body`, label: 'body' }]}

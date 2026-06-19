@@ -4,6 +4,7 @@ import { BaseNode } from './baseNode';
 export const LLMNode = ({ id, data, selected }) => {
   return (
     <BaseNode
+      id={id}
       title="LLM"
       headerColor="#d97706"
       inputs={[

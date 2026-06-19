@@ -8,6 +8,7 @@ export const InputNode = ({ id, data, selected }) => {
 
   return (
     <BaseNode
+      id={id}
       title="Input"
       headerColor="#7c3aed"
       inputs={[]}

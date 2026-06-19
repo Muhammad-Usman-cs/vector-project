@@ -49,6 +49,7 @@ export const TextNode = ({ id, data, selected }) => {
 
   return (
     <BaseNode
+      id={id}
       title="Text"
       headerColor="#2563eb"
       inputs={variableInputs}

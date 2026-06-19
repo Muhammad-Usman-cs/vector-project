@@ -8,6 +8,7 @@ export const OutputNode = ({ id, data, selected }) => {
 
   return (
     <BaseNode
+      id={id}
       title="Output"
       headerColor="#059669"
       inputs={[{ id: `${id}-value`, label: 'value' }]}
