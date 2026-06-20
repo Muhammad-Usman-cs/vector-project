@@ -7,6 +7,7 @@ export const ConditionalNode = ({ id, data, selected }) => {
 
   return (
     <BaseNode
+      id={id}
       title="Conditional"
       headerColor="#ef4444"
       inputs={[{ id: `${id}-input`, label: 'input' }]}

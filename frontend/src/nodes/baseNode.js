@@ -1,8 +1,10 @@
 // baseNode.js — shared wrapper for all node types
 import { Fragment } from 'react';
 import { Handle, Position } from 'reactflow';
+import { useStore } from '../store';
 
 export const BaseNode = ({
+  id,
   title,
   headerColor = '#7c3aed',
   inputs = [],   // [{ id, label?, style? }]
@@ -11,6 +13,8 @@ export const BaseNode = ({
   minWidth = 220,
   selected = false,
 }) => {
+  const deleteNode = useStore((state) => state.deleteNode);
+
   const inputCount = inputs.length;
   const outputCount = outputs.length;
 
@@ -46,6 +50,13 @@ export const BaseNode = ({
 
       <div className="base-node__header" style={{ background: headerColor }}>
         <span className="base-node__title">{title}</span>
+        <button
+          className="base-node__delete"
+          onClick={() => deleteNode(id)}
+          title="Remove node"
+        >
+          ×
+        </button>
       </div>
 
       <div className="base-node__body">{children}</div>

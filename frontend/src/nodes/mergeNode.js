@@ -7,6 +7,7 @@ export const MergeNode = ({ id, data, selected }) => {
 
   return (
     <BaseNode
+      id={id}
       title="Merge"
       headerColor="#8b5cf6"
       inputs={[

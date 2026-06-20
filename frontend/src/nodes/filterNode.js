@@ -9,6 +9,7 @@ export const FilterNode = ({ id, data, selected }) => {
 
   return (
     <BaseNode
+      id={id}
       title="Filter"
       headerColor="#06b6d4"
       inputs={[{ id: `${id}-data`, label: 'data' }]}
