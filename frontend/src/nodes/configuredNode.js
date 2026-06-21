@@ -40,10 +40,36 @@ const InfoBlock = ({ field }) => (
   </div>
 );
 
+const RadioField = ({ field, value, onChange }) => (
+  <div className={fieldWrap}>
+    <label className={fieldLabel}>{field.label}</label>
+    <div className="flex gap-3 mt-[2px]">
+      {field.options.map((opt) => {
+        const val = typeof opt === 'object' ? opt.value : opt;
+        const lbl = typeof opt === 'object' ? opt.label : opt;
+        return (
+          <label key={val} className="flex items-center gap-1.5 cursor-pointer">
+            <input
+              type="radio"
+              name={`${field.key}`}
+              value={val}
+              checked={value === val}
+              onChange={() => onChange(val)}
+              className="accent-violet-600 cursor-pointer"
+            />
+            <span className="text-xs text-slate-300">{lbl}</span>
+          </label>
+        );
+      })}
+    </div>
+  </div>
+);
+
 const RENDERERS = {
   text:   (field, value, onChange) => <TextField   field={field} value={value} onChange={onChange} />,
   select: (field, value, onChange) => <SelectField field={field} value={value} onChange={onChange} />,
   info:   (field)                  => <InfoBlock   field={field} />,
+  radio:  (field, value, onChange) => <RadioField field={field} value={value} onChange={onChange} />,
 };
 
 export const ConfiguredNode = ({ id, data, selected, config }) => {

@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ================================================================
-   SELECT — custom dropdown arrow (SVG can't go inline cleanly)
-   ================================================================ */
+
 .select-arrow {
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2364748b'/%3E%3C/svg%3E");
@@ -13,9 +11,6 @@
   padding-right: 24px;
 }
 
-/* ================================================================
-   REACTFLOW — handle dots
-   ================================================================ */
 .react-flow__handle {
   width: 10px !important;
   height: 10px !important;
@@ -40,9 +35,7 @@
 .react-flow__handle-left  { left:  -5px !important; }
 .react-flow__handle-right { right: -5px !important; }
 
-/* ================================================================
-   REACTFLOW — edges
-   ================================================================ */
+
 .react-flow__edge-path {
   stroke: #7c3aed !important;
   stroke-width: 2 !important;
@@ -59,9 +52,7 @@
   stroke-width: 2 !important;
 }
 
-/* ================================================================
-   REACTFLOW — controls & minimap chrome
-   ================================================================ */
+
 .react-flow__controls {
   background: #1e293b !important;
   border: 1px solid #334155 !important;
@@ -93,9 +84,7 @@
 .react-flow__background   { background: #0f172a; }
 .react-flow__panel        { color: #64748b; }
 
-/* ================================================================
-   SCROLLBAR
-   ================================================================ */
+
 ::-webkit-scrollbar       { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }

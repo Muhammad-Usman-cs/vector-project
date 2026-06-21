@@ -21,6 +21,19 @@ export const NODE_CONFIGS = [
   },
 
   {
+    type: 'personalInfo',
+    label: 'Personal Information',
+    icon: '👤',
+    color: '#0ea5e9',
+    inputs: [],
+    outputs: [{ id: 'data', label: 'data' }],
+    fields: [
+      { key: 'name',   type: 'text',  label: 'Name' },
+      { key: 'label',  type: 'text',  label: 'Label' },
+      { key: 'gender', type: 'radio', label: 'Gender', options: ['Male', 'Female'] },
+    ],
+  },
+  {
     type: 'customOutput',
     label: 'Output',
     icon: '←',
@@ -54,7 +67,6 @@ export const NODE_CONFIGS = [
     ],
   },
 
-  // ── escape-hatch nodes: own component handles rendering ──────────────
   {
     type: 'text',
     label: 'Text',
@@ -71,7 +83,6 @@ export const NODE_CONFIGS = [
     color: '#ec4899',
     component: ImageNode,
   },
-  // ────────────────────────────────────────────────────────────────────
 
   {
     type: 'filter',
