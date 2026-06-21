@@ -4,6 +4,7 @@ import { useStore } from './store';
 import { shallow } from 'zustand/shallow';
 import { NODE_CONFIGS } from './nodeConfigs';
 import { createConfiguredNode } from './nodes/configuredNode';
+import { DeletableEdge } from './edges/deletableEdge';
 import 'reactflow/dist/style.css';
 
 const gridSize   = 20;
@@ -13,6 +14,8 @@ const proOptions = { hideAttribution: true };
 const nodeTypes = Object.fromEntries(
   NODE_CONFIGS.map((cfg) => [cfg.type, cfg.component || createConfiguredNode(cfg)])
 );
+
+const edgeTypes = { deletable: DeletableEdge };
 
 const getInitNodeData = (nodeID, type) => {
   const cfg = NODE_CONFIGS.find((c) => c.type === type);
@@ -79,7 +82,7 @@ export const PipelineUI = () => {
         nodes={nodes} edges={edges}
         onNodesChange={onNodesChange} onEdgesChange={onEdgesChange}
         onConnect={onConnect} onDrop={onDrop} onDragOver={onDragOver}
-        onInit={setInstance} nodeTypes={nodeTypes} proOptions={proOptions}
+        onInit={setInstance} nodeTypes={nodeTypes} edgeTypes={edgeTypes} proOptions={proOptions}
         snapGrid={[gridSize, gridSize]} connectionLineType="smoothstep" fitView
       >
         <Background color="#1e293b" gap={gridSize} variant={BackgroundVariant.Dots} />
